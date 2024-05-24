@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    padding: 4rem;
+}
+
+#btnOpenModal, #btnCloseModal{
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+#btnCloseModal{
+    background-color: rgb(143, 143, 143);
+    color: #fff;
+}
+
+#btnOpenModal{
+    background-color: rgb(0, 68, 214);
+    color: #fff;
+}
+
+#btnOpenModal:hover, #btnCloseModal:hover{
+    opacity: .9;
+}
+
+#btnOpenModal:active{
+    transition: .1s;
+    box-shadow: 0px 0px 3px 3px rgba(109, 155, 253, 0.5);
+}
+
+#backgroundModal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.356);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+    z-index: 0;
+}
+
+#modal{
+    background-color: #fff;
+    max-width: 500px;
+    height: 300px;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    position: relative;
+    top: -100%;
+    z-index: 1;
+    transition: .7s;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.show #modal{
+    animation-name: showModal;
+    animation-duration: .6s;
+    top: 0;
+}
+
+.hide{
+    opacity: 0;
+    pointer-events: none;
+    transition: .7s;
+}
+
+@keyframes showModal {
+    0%{
+        top: -100%;
+    }
+    50% {
+        top: 30px; 
+    }
+    100%{
+        top: 0
+    }
+}
