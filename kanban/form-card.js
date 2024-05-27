@@ -32,10 +32,10 @@ function saveCard(e){
     }
 }
 
-function createUniqueId(value){
+function createUniqueId(){
     let date = new Date();
     
-    return value + date.getHours() + date.getMinutes() + date.getSeconds() + date.getMilliseconds();
+    return "item" + date.getHours() + date.getMinutes() + date.getSeconds() + date.getMilliseconds();
 }
 
 function createCard(value){
@@ -48,7 +48,7 @@ function createCard(value){
         editCard(item)
     })
     
-    item.id = createUniqueId(value);
+    item.id = createUniqueId();
 
     const todoCards = document.querySelector("#todoCards");
     todoCards.appendChild(item)
