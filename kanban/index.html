@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="modal.js" type="module" defer></script>
+    <script src="form-card.js" type="module" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Kanban</h1>
+        <button id="btnOpenModal">Novo Cartão</button>
+    </div>
+    <div class="kanban">
+        <div class="group">
+            <p id="todo">A Fazer</p>
+            <div id="todoCards" class="column">
+                <div class="item description">
+                    Aqui ficarão as atividades ainda não iniciadas.
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <p id="going">Em andamento</p>
+            <div class="column">
+                <div class="item description">
+                    Aqui ficarão as atividades em andamento.
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <p id="completed">Concluído</p>
+            <div class="column">
+                <div class="item description">
+                    Aqui ficarão as atividades concluídas.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dropDelete" ondrop="deleteCard(event)" ondragover="allowDrop(event)">
+        Excluir
+    </div>
+
+    
+    <div id="background" class="hide">
+        <div id="modal">
+            <button id="btnCloseModal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </button>
+            <h2 id="titleModal">Novo Cartão</h2>
+            <form id="form-card" method="POST">
+                <input type="text" id="nameCard" placeholder="Digite um nome">
+                <small id="validation"></small>
+                <button id="submit" type="submit">Criar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

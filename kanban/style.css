@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+
+.header{
+    width: fit-content;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header h1{
+    text-align: center;
+    padding: 1rem;
+    color: #f8f8f8;
+    text-shadow: 1px 1px 4px rgba(48, 48, 48, 0.5);
+}
+
+.kanban {
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.group{
+    background-color: #f8f8f8;
+    width: 300px;
+    border-radius: .5rem;
+    padding: 10px;
+}
+
+.group > p{
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    border-radius: .5rem;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.item{
+    background-color: #fff;
+    padding: 1.4rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    word-break: break-all;
+    transition: .5s;
+}
+
+.description{
+    background: rgb(34,34,34);
+    background: linear-gradient(110deg, rgba(34,34,34,1) 0%, rgba(170,170,170,1) 100%);
+    color: #fff;  
+    font-size: .7em;  
+}
+
+.active{
+    background-color: #efefef;
+}
+
+#todo{
+    background-color: #ff8974;
+}
+
+#going{
+    background-color: #f1ff74;
+}
+
+#completed{
+    background-color: #74ffd5;
+}
+
+#dropDelete{
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 20px;
+    border-radius: .5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    transition: .3s;
+    opacity: 0;
+}
+
+.visibleDelete{ 
+    opacity: 1 !important;
+}
+
+/* Modal */
+#btnOpenModal{
+    background-color: #ffffff;
+    color: #222;
+    border-radius: .5rem;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+#background{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal{
+    background-color: #fff;
+    width: 300px;
+    height: 250px;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, .15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+#modal #btnCloseModal{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+} 
+
+#modal h2{
+    text-align: center;
+    color: #222;
+}
+
+#form-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+#form-card > input{
+    padding: 10px;
+    border-radius: .5rem;
+    border: 1px solid #aaa;
+}
+
+#form-card > input:focus{
+    outline-color: #b5fae6;
+}
+
+#form-card > button{
+    padding: 10px;
+    border-radius: .5rem;
+    border: none;
+    background-color: #dffff6;
+    cursor: pointer;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .15);
+    transition: .5s;
+}
+
+#form-card > button:hover{
+    background-color: #b5fae6;
+}
+
+#form-card > #validation{
+    display: none;
+    color: #ff0000;
+}
+
+.show{
+    opacity: 1 !important;
+    pointer-events: visible !important;
+}
+
+.hide{
+    opacity: 0;
+    pointer-events: none;
+}
