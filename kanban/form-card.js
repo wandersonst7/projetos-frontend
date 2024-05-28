@@ -1,5 +1,3 @@
-import { toggleModal } from './modal.js';
-
 const input = document.querySelector('#nameCard');
 const btnCloseModal = document.querySelector("#btnCloseModal");
 const form = document.querySelector('#form-card');
@@ -108,4 +106,9 @@ function validation(value){
         validationElement.style.display = 'none';
         return true
     }
+}
+
+function toggleModal(){
+    const background = document.querySelector("#background");
+    background.classList.toggle('show');
 }
